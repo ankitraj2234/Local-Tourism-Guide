@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Map View -->
+        <org.osmdroid.views.MapView
+            android:id="@+id/osmMapView"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_alignParentTop="true" />
+
+        <!-- Current Location and Weather Info -->
+        <LinearLayout
+            android:id="@+id/currentLocationLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/osmMapView"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/locationName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Current Location"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/weatherInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Weather Info"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- Weather Info Tiles -->
+        <LinearLayout
+            android:id="@+id/weatherTilesLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/currentLocationLayout"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="8dp">
+
+            <!-- Humidity Tile -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/tile_background"
+                android:padding="8dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/humidityTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Humidity: N/A" />
+            </LinearLayout>
+
+            <!-- Visibility Tile -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/tile_background"
+                android:padding="8dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/visibilityTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Visibility: N/A" />
+            </LinearLayout>
+
+            <!-- UV Index Tile -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/tile_background"
+                android:padding="8dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/uvIndexTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="UV Index: N/A" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- RecyclerView for 7-Day Weather Forecast -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/forecastRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/weatherTilesLayout"
+            android:layout_marginTop="8dp" />
+
+        <!-- RecyclerView for Hotels and Tourist Places -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/touristPlacesList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/forecastRecyclerView"
+            android:layout_marginTop="8dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/hotelsList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/touristPlacesList"
+            android:layout_marginTop="8dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/eventsList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hotelsList"
+            android:layout_marginTop="8dp" />
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>
