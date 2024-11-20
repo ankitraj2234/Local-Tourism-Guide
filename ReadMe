@@ -1,0 +1,65 @@
+Project Description
+
+
+Tourism Guide, is an Android application designed to enhance the travel experience for users by providing a platform to save favorite places, view feedback for the location, view their memories, and get relevant weather updates for specific locations with a robust and secure Login system which Facilitate OTP services for secure user Login. Below is a breakdown of the application's functionality, including the purpose of each feature and how it contributes to the overall user experience.
+
+User Registration and Login
+1.	User Registration:
+o	Users can register by providing their name, age, mobile number, email, password, and uploading a profile image.
+o	The app performs real-time validation for input fields using TextWatcher to ensure data accuracy.
+o	Profile images are displayed in an ImageView on the registration screen for preview before uploading.
+2.	User Login:
+o	Registered users can log in using their username and password.
+o	Login sessions are maintained using Shared Preferences (UserSession with the key loggedInUsername).
+3.	Password Reset via OTP:
+o	Users can reset their passwords using an OTP sent to their registered email.
+o	This functionality is implemented using the Java Mail library and Gmail SMTP, ensuring secure and fast OTP delivery.
+________________________________________
+Main Features
+1.	Map View with Toolbar:
+o	The main page displays a map for navigation, with a toolbar at the top featuring the app name and the user's profile picture.
+o	The profile picture is fetched from the database using the fetchUserProfileImageFromDatabase() method and displayed in a circular format.
+2.	Weather Information:
+o	Users can view real-time detailed weather data and a 7-day forecast for their current location.
+o	A floating action button (FAB) provides quick access to weather alerts for the displayed location.
+3.	Favorites Management:
+o	Users can add their favorite places, upload images for each location, and store them in the database.
+o	A dedicated Favorite Places Activity uses a RecyclerView with modern CardView and rounded UI for displaying added places.
+o	Each favorite place entry can be deleted via a long press, which opens a confirmation dialog.
+4.	Redirect to Memories Activity:
+o	Clicking on any favorite place redirects the user to a Memories Activity, passing the username and location name as extras in the Intent.
+5.	Memories Management:
+o	Users can store and view memories for specific locations, including uploaded images and personal notes.
+o	Memories are displayed using rounded UI elements for a visually appealing experience.
+________________________________________
+
+Feedback System
+1.	Feedback Submission:
+o	Users can leave feedback for locations, which includes a text review, an optional image, and a rating out of 5.
+o	The app calculates and stores the average rating for each location in the database.
+2.	Feedback Display:
+o	Feedback is shown to other users in a list, with the reviewer's username and timestamp.
+o	The UI utilizes rounded Card View designs for a modern and intuitive look.
+________________________________________
+Additional Features
+1.	Logout Functionality:
+o	Users can log out by clicking their profile picture in the toolbar.
+o	A dialog box asks for confirmation, and upon logout, the session is cleared, redirecting the user to the login page.
+2.	Session Persistence:
+o	If a user does not log out, the login session persists, and they are redirected directly to the main page when reopening the app.
+3.	Modern UI Design:
+o	The app uses CardView and rounded UI elements for a clean and visually appealing design.
+o	This ensures compatibility with the latest Android versions and provides a polished user experience.
+4.	Floating Action Button (FAB) as Menu:
+o	A multi-functional FAB acts as a menu for additional features.
+o	Currently, the FAB allows users to view weather alerts or other quick-access features.
+________________________________________
+Technical Highlights
+1.	Database:
+o	The app uses SQLite for data storage, managing multiple tables such as users, favorites, feedbacks, and memories.
+2.	Image Handling:
+o	User-uploaded images (profile pictures, favorite place images, feedback images) are compressed and stored as BLOB in the database.
+o	Images are displayed using BitmapFactory.
+3.	Modern UI Frameworks:
+o	Rounded designs and Card View elements are used across activities to maintain a unified design language.
+o	The app supports dynamic scaling for compatibility with various screen sizes and resolutions.
