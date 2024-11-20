@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_alerts"
+        android:title="☔ Alerts"
+        android:iconTint="#000000"
+        android:background="@drawable/rounded_menu_item"
+    />
+    <item
+        android:id="@+id/menu_feedback"
+        android:title="Feedback"
+        android:iconTint="#000000"
+        android:background="@drawable/rounded_menu_item"
+        />
+</menu>

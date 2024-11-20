@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Tourism Guide</string>
+    <string name="weather_api_key">083846d6ba804161a6b182033241710</string>
+</resources>
